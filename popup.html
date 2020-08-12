@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      button {
+        height: 25px;
+        width: 80px;
+        outline: none;
+        margin-right: 3px;
+        margin-top: 5px;
+        background-color: #d5daed;
+      }
+      #delbutton{
+        width: 120px;
+        position: relative;
+        left: 25px;
+      }
+      html{
+        background-color: #353740;
+      }
+
+    </style>
+  </head>
+  <body onload="getURL()">
+    <button id="addNote" onclick="addNoteSpace()">make note</button>
+    <span id="noteSpace" style="display: none;"  onkeypress="if(event.keyCode == 13){saveNote();}">
+        <textarea id="noteBody" cols=26 rows="5"></textarea>
+        <button id="saveButton", onclick="saveNote()">save</button>
+        <button id="cancelButton", onclick="closeNote()">cancel</button>
+        <button id="delbutton", onclick="deleteNote()">delete note</button>
+    </span>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
