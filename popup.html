@@ -17,17 +17,26 @@
       }
       html{
         background-color: #353740;
+        min-width: 225px;
+      }
+      h2{
+        color: #1295db;
+        position: relative;
+        left:40px;
+        margin: 6px;
+
       }
 
     </style>
   </head>
-  <body onload="getURL()">
-    <button id="addNote" onclick="addNoteSpace()">make note</button>
-    <span id="noteSpace" style="display: none;"  onkeypress="if(event.keyCode == 13){saveNote();}">
+  <body>
+    <p id="loadingMessage">loading...</p>
+    <span id="noteSpace" style="display: none;">
+        <h2>current note</h2>
         <textarea id="noteBody" cols=26 rows="5"></textarea>
-        <button id="saveButton", onclick="saveNote()">save</button>
-        <button id="cancelButton", onclick="closeNote()">cancel</button>
-        <button id="delbutton", onclick="deleteNote()">delete note</button>
+        <button id="saveButton">save</button>
+        <button id="cancelButton">cancel</button>
+        <button id="delbutton">delete note</button>
     </span>
 
     <script src="popup.js"></script>
