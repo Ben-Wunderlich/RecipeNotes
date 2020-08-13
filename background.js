@@ -15,7 +15,16 @@ chrome.runtime.onMessage.addListener( function(request,sender,sendResponse)
         chrome.tabs.query({active:true},function(tabs){
             tabURL = tabs[0].url;
             sendResponse( {navURL:tabURL} );
-        });       
+        });
+
+        /*chrome.windows.create({
+            url: chrome.runtime.getURL("familiar.html"),
+            type: "popup"
+        });*/
+    }
+
+    if(request.greeting === "checkFamiliarity"){
+        
     }
     return true;
 });

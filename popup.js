@@ -18,8 +18,12 @@ function noteFromStorage(){
 
 function saveNote(){
     var inputVal = document.getElementById("noteBody").value;
-    let url = papaURL;
-    localStorage[url] = inputVal;
+    if(inputVal.length==0){
+        deleteNote();
+    }
+    else{
+        localStorage[papaURL] = inputVal;
+    }
     closeNote();
 }
 
@@ -57,6 +61,13 @@ function deleteNote(){
     closeNote();
 }
 
+function openStorageTab(){
+        chrome.windows.create({
+          url: chrome.runtime.getURL("noteStorage.html"),
+          type: "popup"
+        });
+}
+
 //EVENT LISTENERS
 //document.getElementById("addNote").addEventListener("click", addNoteSpace);
 
@@ -67,5 +78,7 @@ document.getElementById("cancelButton").addEventListener("click", closeNote);
 document.getElementById("delbutton").addEventListener("click", deleteNote);
 
 document.getElementById("noteSpace").addEventListener("keydown", KeySave);
+
+document.getElementById("storageWindow").addEventListener("click", openStorageTab);
 
 getURL()
