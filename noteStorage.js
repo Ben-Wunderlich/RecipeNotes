@@ -16,12 +16,18 @@ function addAllElements(allKeys){
     });
 }
 
-function addListElement(key, note){
-    var elem = document.createElement("LI");
-    elem.innerHTML = "<a href="+key+">"+key+"</a><h3> has note: </h3><p>"+note+"</p>"
+function shorten(str, targChars=80){
+    return str.substring(0, targChars);
+}
 
-    var butt = document.createElement("BUTTON");
-    butt.innerHTML = "delete";
+function addListElement(key, note){
+    var elem=document.createElement("TR");
+    var targ="_blank"
+    elem.innerHTML="<td><a href="+key+" target="+targ+">"+shorten(key)+"</td>"+
+    "<td>"+note+"</td>";
+
+    var butt = document.createElement("TD");
+    butt.innerHTML = "<button>delete</button>";
     elem.appendChild(butt);
 
     butt.addEventListener("click", function(){
@@ -29,15 +35,12 @@ function addListElement(key, note){
         localStorage.removeItem(key);
     });
 
-    document.getElementById("noteList").appendChild(elem);
+    document.getElementById("noteTable").appendChild(elem);
 }
 
 function main(){
     var all = retrieveKeys();
     addAllElements(all);
-    //document.getElementById("note1").innerHTML = all;
 }
 
 main();
-
-//document.getElementById("note1").addEventListener("click", saveNote);

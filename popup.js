@@ -62,10 +62,11 @@ function deleteNote(){
 }
 
 function openStorageTab(){
-        chrome.windows.create({
-          url: chrome.runtime.getURL("noteStorage.html"),
-          type: "popup"
-        });
+    closeNote();
+    chrome.windows.create({
+        url: chrome.runtime.getURL("noteStorage.html"),
+        type: "popup"
+    });
 }
 
 //EVENT LISTENERS

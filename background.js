@@ -16,15 +16,6 @@ chrome.runtime.onMessage.addListener( function(request,sender,sendResponse)
             tabURL = tabs[0].url;
             sendResponse( {navURL:tabURL} );
         });
-
-        /*chrome.windows.create({
-            url: chrome.runtime.getURL("familiar.html"),
-            type: "popup"
-        });*/
-    }
-
-    if(request.greeting === "checkFamiliarity"){
-        
     }
     return true;
 });

@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>Notes</title>
     <style>
+
+      html{
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      }
+
       h2{
         color: #1295db;
         position: relative;
@@ -20,13 +26,36 @@
       button{
           margin-left: 5px;
       }
+      th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #7343d9;
+      color: white;
+      }
+
+    td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    }
+
+    tr:nth-child(even){background-color: #f2f2f2;}
+
+    tr:hover {background-color: #ddd;}
+
     </style>
   </head>
   <body>
-    <h1>all notes</h1>
-    <ol id="noteList">
-        <!--<li><h3>key</h3><p id="note1">note</p><button>del</button></li>-->
-    </ol>
+    <!--<ol id="noteList">
+        <li><h3>key</h3><p id="note1">note</p><button>del</button></li>
+    </ol>-->
+    <table id="noteTable">
+      <tr>
+        <th>location</th>
+        <th>note</th>
+        <th>delete?</th>
+      </tr>
+    </table>
     <script src="noteStorage.js"></script>
   </body>
 </html>
