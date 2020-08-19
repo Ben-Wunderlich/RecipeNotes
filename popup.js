@@ -31,6 +31,7 @@ function closeNote(){
     window.close();
 }
 
+//no longer used, couldnt add newline
 function KeySave(e){
     if(e.keyCode===13){
         saveNote();
@@ -62,10 +63,13 @@ function deleteNote(){
 }
 
 function openStorageTab(){
+    saveNote();
     closeNote();
     chrome.windows.create({
         url: chrome.runtime.getURL("noteStorage.html"),
-        type: "popup"
+        type: "popup",
+        width: 1500,
+        height: 800
     });
 }
 
@@ -78,7 +82,7 @@ document.getElementById("cancelButton").addEventListener("click", closeNote);
 
 document.getElementById("delbutton").addEventListener("click", deleteNote);
 
-document.getElementById("noteSpace").addEventListener("keydown", KeySave);
+//document.getElementById("noteSpace").addEventListener("keydown", KeySave);
 
 document.getElementById("storageWindow").addEventListener("click", openStorageTab);
 
