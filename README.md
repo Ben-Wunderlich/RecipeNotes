@@ -11,3 +11,7 @@ I also use this to keep track of timestamps in videos and other things.
 ## limitations
 
 It only shows the previous note if it is exactly the same url so if it moved, then when you click the icon it won't show anything. To solve this you can click on "see all notes" to see all of the notes you have made and delete ones you don't need anymore.
+
+## what it looks like
+
+![display example](https://github.com/Ben-Wunderlich/RecipeNotes/blob/master/images/Screenshot%20(764).png)
